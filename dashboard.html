@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | The Underground IT Toolkit</title>
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <div class="top">
+      <a href="index.html" class="logo"><h1>The Underground IT Toolkit</h1></a>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="resources.html">Resources</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="about.html">About</a>
+        <a href="login.html">Login</a>
+      </nav>
+    </div>
+
+    <div class="user-section">
+      <div class="user-avatar">👤</div>
+      <div class="user-info">
+        <h2>Welcome, User!</h2>
+        <p>Continue your learning journey and reach your goals.</p>
+      </div>
+    </div>
+
+    <section class="progress-container">
+      <h3>Your Progress</h3>
+      <p class="progress-subtitle">Track your learning journey across different courses</p>
+
+      <div class="progress-cards">
+        <div class="progress-card">
+          <div class="course-name">GitHub Basics</div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 50%;"></div>
+          </div>
+          <div class="progress-percent">50%</div>
+        </div>
+
+        <div class="progress-card">
+          <div class="course-name">Debugging 101</div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 35%;"></div>
+          </div>
+          <div class="progress-percent">35%</div>
+        </div>
+
+        <div class="progress-card">
+          <div class="course-name">Cloud Deployment</div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 87%;"></div>
+          </div>
+          <div class="progress-percent">87%</div>
+        </div>
+
+        <div class="progress-card">
+          <div class="course-name">Advanced Debugging</div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 20%;"></div>
+          </div>
+          <div class="progress-percent">20%</div>
+        </div>
+      </div>
+    </section>
+
+    <script src="dashboard.js"></script>
+    
+    <footer>
+      <div class="footer-left">
+        <p>© 2025 The Underground IT Toolkit. All rights reserved.</p>
+      </div>
+      <div class="footer-right">
+        <nav class="footer-nav" aria-label="footer navigation">
+          <a href="home.html">Home</a>
+          <a href="resources.html">Resources</a>
+          <a href="dashboard.html">Dashboard</a>
+          <a href="about.html">About</a>
+          <a href="login.html">Login</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

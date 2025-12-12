@@ -1,0 +1,136 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+}
+
+.fade {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('astro.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 60px 20px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(44, 62, 80, 0.7) 0%, rgba(52, 73, 94, 0.6) 50%, rgba(91, 123, 158, 0.5) 100%);
+    z-index: 0;
+}
+
+/* Main Title (h1) */
+.hero h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    font-weight: bold;
+}
+
+/* Subtitle (h2) */
+.hero h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    font-weight: 400;
+}
+
+/* Start Learning Button */
+.btn {
+    display: inline-block;
+    padding: 18px 50px;
+    background-color: #C5D5E8;
+    color: #000;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.btn:hover {
+    background-color: #A5BFD9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        background-position: 60% center;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+        padding: 0 20px;
+    }
+
+    .hero h2 {
+        font-size: 20px;
+        padding: 0 20px;
+    }
+
+    .btn {
+        padding: 15px 40px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero h2 {
+        font-size: 18px;
+    }
+
+    .btn {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+}
