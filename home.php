@@ -1,0 +1,94 @@
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | The Underground IT Toolkit</title>
+    <link rel="stylesheet" href="home.css" />
+    <script src="home.js" defer></script>
+  </head>
+  <body>
+    <div class="top">
+      <a href="index.php" class="logo"><h1>The Underground IT Toolkit</h1></a>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+      <nav>
+        <a href="home.php">Home</a>
+        <a href="resources.php">Resources</a>
+        <a href="dashboard.php">Dashboard</a>
+        <a href="about.php">About</a>
+        <?php if (isset($_SESSION['user_id'])): ?>
+          <a href="logout.php">Logout</a>
+        <?php else: ?>
+          <a href="login.php">Login</a>
+        <?php endif; ?>
+      </nav>
+    </div>
+
+    <div class="upper">
+      <h2 class="title-upper">Welcome to your Learning Journey</h2>
+      <p class="p-upper">Explore our curated resources designed to help you bridge the gap between theory and practice in IT.</p>
+    </div>
+
+    <section class="content">
+      <h2>Featured Topics</h2>
+      <div class="cards">
+        <div class="card">
+          <img class="card-img" src="github_mastery.webp" alt="GitHub Mastery">
+          <h3>GitHub Mastery</h3>
+          <p>Learn version control and project collaboration. Master the tools and workflows that professionals use to build software together.</p>
+          <a href="learning.php" class="btn">Learn More</a>
+        </div>
+        <div class="card">
+          <img class="card-img" src="debugging_Secrets.webp" alt="Debugging Secrets">
+          <h3>Debugging Secrets</h3>
+          <p>Techniques to identify and fix code issues. Discover proven strategies to solve coding problems faster and smarter.</p>
+          <a href="learning.php" class="btn">Learn More</a>
+        </div>
+        <div class="card">
+          <img class="card-img" src="cloud_tools.webp" alt="Cloud Tools">
+          <h3>Cloud Tools</h3>
+          <p>Google Cloud, AWS, and other essentials. Explore cloud platforms that every IT professional should know.</p>
+          <a href="learning.php" class="btn">Learn More</a>
+        </div>
+        <div class="card">
+          <img class="card-img" src="soft_skills.webp" alt="Soft Skills">
+          <h3>Soft Skills</h3>
+          <p>Communication, teamwork, and adaptability. Build the essential professional skills that complement technical expertise.</p>
+          <a href="learning.php" class="btn">Learn More</a>
+        </div>
+        <div class="card">
+          <img class="card-img" src="productivity_hacks.webp" alt="Productivity Hacks">
+          <h3>Productivity Hacks</h3>
+          <p>Tips to manage your time and workflow. Optimize your productivity with proven techniques and best practices.</p>
+          <a href="learning.php" class="btn">Learn More</a>
+        </div>
+        <div class="card">
+          <img class="card-img" src="productivity_hacks.webp" alt="Database & UI Design">
+          <h3>Database & UI Design</h3>
+          <p>A simple, clear interface supported by an organized database structure, making it easy for users to find what they need while keeping all data fast, consistent, and easy to manage.</p>
+          <a href="learning.php" class="btn">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-left">
+        <p>© 2025 The Underground IT Toolkit. All rights reserved.</p>
+      </div>
+      <div class="footer-right">
+        <nav class="footer-nav" aria-label="footer navigation">
+          <a href="home.php">Home</a>
+          <a href="resources.php">Resources</a>
+          <a href="dashboard.php">Dashboard</a>
+          <a href="about.php">About</a>
+          <?php if (isset($_SESSION['user_id'])): ?>
+            <a href="logout.php">Logout</a>
+          <?php else: ?>
+            <a href="login.php">Login</a>
+          <?php endif; ?>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

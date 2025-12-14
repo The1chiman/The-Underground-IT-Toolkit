@@ -1,0 +1,45 @@
+.main-description {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+.card {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #B5D0E8;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+.mark-done-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #7B9BB8 0%, #5B7B98 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mark-done-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(107, 139, 168, 0.4);
+}
+
+.mark-done-btn:disabled {
+  background-color: #6B8BA8;
+  cursor: default;
+  opacity: 0.8;
+}

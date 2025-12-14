@@ -1,24 +1,41 @@
-<?php 
-require_once('config.php')
-?>
+<?php
+require_once('config.php');
 
-<?php 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $fullName = trim($_POST['fullName'] ?? '');
+    $email    = trim($_POST['email'] ?? '');
+    $password = trim($_POST['password'] ?? '');
 
-if($_SERVER(['REQUEST_METHOD'] === 'POST')){
-            $fullName   = $_POST['fullName'];
-            $email      = $_POST['email'];
-            $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-            
-            $sql = "INSERT INTO users(fullName, email, password) VALUES(?,?,?)";
-            $stntinsert = $db->prepare($sql);
-            $result = $stntinsert->execute([$fullName,$email,$password]); 
-            if ($result){
-                echo 'Registration Successful!';
-            }else{
-                echo 'Registration Failed.';
+    if ($fullName === '' || $email === '' || $password === '') {
+        echo "Missing required fields.";
+        exit;
+    }
+
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+    try {
+        // Check if email already exists
+        $check = $db->prepare("SELECT id FROM users WHERE email = ?");
+        $check->execute([$email]);
+
+        if ($check->rowCount() > 0) {
+            echo "Email already registered!";
+        } else {
+            $sql = "INSERT INTO users (fullName, email, password) VALUES (?, ?, ?)";
+            $stmt = $db->prepare($sql);
+            $result = $stmt->execute([$fullName, $email, $hashedPassword]);
+
+            if ($result) {
+                echo "Registration Successful!";
+            } else {
+                $errorInfo = $stmt->errorInfo();
+                echo "Registration Failed: " . $errorInfo[2];
             }
         }
-else{
-    echo 'No data';
-}            
-           
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+} else {
+    echo "No data received.";
+}
+?>

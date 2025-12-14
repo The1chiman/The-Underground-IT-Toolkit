@@ -1,0 +1,18 @@
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Underground IT Toolkit</title>
+  <link rel="stylesheet" href="index.css">
+  <script defer src="script.js"></script>
+</head>
+<body class="fade">
+  <section class="hero">
+    <h1>The Underground IT Toolkit</h1>
+    <h2>Bridging academic theory with real-world IT practice</h2>
+    <a href="home.php" class="btn">Start Learning</a>
+  </section>
+</body>
+</html>
